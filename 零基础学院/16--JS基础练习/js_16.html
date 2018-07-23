@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js_16</title>
+  
+</head>
+<body>
+<input id="first-number" type="number" value="0" placeholder="第一个数字">
+<input id="second-number" type="number" value="0" placeholder="第二个数字">
+<button id="add-btn" onclick="add_Btn()">加</button>
+<button id="minus-btn" onclick="minus_Btn()">减</button>
+<button id="times-btn" onclick="times_Btn()">乘</button>
+<button id="divide-btn" onclick="divide_Btn()">除</button>
+<p id="result">运算结果</p>
+<script>
+  var first_number=document.getElementById("first-number");
+  var second_number=document.getElementById("second-number");
+  var add_btn=document.getElementById("add-btn");
+  var minus_btn=document.getElementById("minus-btn");
+  var times_btn=document.getElementById("times-btn");
+  var divide_btn=document.getElementById("divide-btn");
+  var result=document.getElementById("result");
+  var sum;
+  function add_Btn(n,m) {
+    var fir=Number(first_number.value);
+    var sec=Number(second_number.value);
+    sum=fir+sec;
+    result.innerHTML=fir+'+'+sec+'='+sum;
+  }
+  function minus_Btn(n,m) {
+    var fir=Number(first_number.value);
+    var sec=Number(second_number.value);
+    sum=fir-sec;
+    result.innerHTML=fir+'  '+'-'+sec+'  '+'='+sum;
+  }
+  function times_Btn(n,m) {
+    var fir=Number(first_number.value);
+    var sec=Number(second_number.value);
+    sum=fir*sec;
+    result.innerHTML=fir+'  '+'*'+sec+'  '+'='+sum;
+  }
+  function divide_Btn(n,m) {
+    var fir=Number(first_number.value);
+    var sec=Number(second_number.value);
+    sum=fir/sec;
+    result.innerHTML=fir+'  '+'/'+sec+'  '+'='+sum;
+  }
+  
+</script>
+
+
+
+
+<!--<h1>Demo</h1>-->
+<!--<p id="content-wrapper">你是谁？</p>-->
+<!--<input type="text" placeholder="输入你的名字" id="input">-->
+<!--<button  id="send" onclick="send()">发送</button>-->
+<!--<script>-->
+<!--function send() {-->
+<!--var name=document.getElementById("input");-->
+<!--var value=name.value;-->
+<!--var wrapper=document.getElementById("content-wrapper");-->
+<!--wrapper.innerHTML='hello'+value;-->
+<!--}-->
+<!--</script>-->
+</body>
+</html>

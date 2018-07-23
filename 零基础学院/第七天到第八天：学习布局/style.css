@@ -1,0 +1,55 @@
+*{margin: 0;padding: 0;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;}
+.fl{float: left;}
+.fr{float: right;}
+li{list-style: none;float: left;}
+div:after{content: "";clear: both;zoom: 1;}
+.w{width: 960px;margin: 0 auto;}
+.w1{width: 960px;margin: 0 auto;position: relative;overflow: hidden;height: 300px;}
+header{height: auto;width: 100%;}
+nav{width: 100%;height: 70px;border-bottom: 1px solid #ddd;margin-bottom: 10px;    overflow: hidden;}
+.header{height: 80px;background: #333333;}
+.header h2{font-size: 24px;line-height: 80px;font-weight: normal;color: #fff;}
+.header ul{overflow: hidden;width: 180px;}
+.header ul li{float: left;width: 30%;padding-top: 10px;}
+.header ul li a{color: white;font-size: 14px;}
+.banner{background: #00c091;height: 300px;}
+.banner ul{overflow: hidden;width: 180px;position: absolute;bottom: 10px;right: 10px;height: 60px;}
+.banner ul li{float: left;height: auto;text-align: center;margin-right: 10px;margin-top: 30px;}
+.banner ul li:nth-child(2){margin-top: 10px;}
+.banner ul li a{overflow: hidden;display: block;color: #fff;text-decoration: none;height: 30px;line-height: 30px;
+    background: #13ad87;transition: 0.4s;width: 35px;border: 1px solid #eee;}
+.banner ul li a.select{background:  #498e7d;height:50px; line-height: 70px;}
+nav ul{overflow: hidden}
+nav ul li a{color: #333333;text-decoration: none;overflow: hidden;display: block;border: 1px solid #ddd;
+    border-bottom: none;border-radius: 10px;width: 100px;text-align: center;background: #eee;
+    height: 60px;margin-top: 20px;line-height: 50px;transition: 0.4s;}
+nav ul li a:hover{background: #fff;border-radius: 10px;}
+
+
+
+
+.main{width: 960px;margin: 10px auto;font-size: 16px;color: #666666;}
+.box{display: flex;display: -moz-flex;display: -webkit-flex;
+flex-flow: row;}
+.item,.item1,.item2{text-align: center;border:1px solid #ddd;height: 150px;line-height: 150px;}
+.item{flex: 2;}
+.item1{flex: 2;margin: 0 10px;}
+.item2{flex: 1;}
+.row{
+    display: flex;flex-flow: row;margin: 10px 0;
+}
+.ro1,.ro2,.ro3,.ro4{text-align: center;border:1px solid #ddd;height: 150px;line-height: 150px;flex:1;}
+.ro2{margin: 0 10px;}
+.ro3{margin-right: 10px;}
+
+
+
+.main_top{width: 100%;height: 380px;overflow: hidden;}
+
+
+
+
+
+
+footer{background: #666666;height:120px;text-align: center;color: #aaaaaa;padding-top: 20px;}
+footer p{font-size: 14px;}

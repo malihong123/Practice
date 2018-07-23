@@ -1,0 +1,14 @@
+*{margin: 0;  padding:0;}
+.main{  width: 960px;margin:35px auto;box-shadow: 0 0 5px rgba(0,0,0,0.1);}
+.main_left{width: 230px;text-align: center;background: #3f8ef9;min-height: 775px;overflow: hidden;float: left;}
+.main h1{font-size: 45px;color: #ffffff;    font-weight: normal;margin-top: 100px;}
+.main_right{float:left;width: auto;margin-left: 35px;}
+.two{overflow: hidden;}
+div:after{content: "";clear:both;height: 0;display: block;visibility: hidden;}
+.two h2{font-size: 26px;padding: 10px 0;}
+.two ul{overflow: hidden;}
+.two ul li{float: left;margin-right: 30px; list-style: none;padding: 10px 0;font-weight: bold;font-size: 18px;}
+.twice{margin: 10px 0;}
+.twice h2{font-size: 26px;padding: 10px 0;}
+.twice dt{font-weight: bold;margin: 10px 0;}
+.twice dd{font-weight: normal;}

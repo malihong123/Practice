@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="ui-dialog.css" rel="stylesheet" type="text/css">
+  <script src="jquery-1.11.2.min.js" rel="script" type="text/javascript"></script>
+  <!--<script src="dialog-min.js" rel="script" type="text/javascript"></script>-->
+  <script src="dialog-plus-min.js" rel="script" type="text/javascript"></script>
+  <style>button{outline: none;border: 1px solid #eee;}</style>
+</head>
+<body>
+<input type="text" id="yue" disabled="disabled" value="1">
+<input type="text" ID="tixian" runat="server" >
+<button ID="withdrawal" runat="server"  data-event="test" Text="提现" OnClick="checktxt()" OnClick="CheckMoney" />提现</button>
+<span id="showmsg" runat="server" style="font-size: 12px; color: red"></span>
+<a style="text-decoration:none" id="wanshan" hidden="hidden" href="agent_edit.aspx">去完善</a>
+<script type="text/javascript">
+ function checktxt() {
+   $("#wanshan").hide();
+   var forward=document.querySelector('#tixian');
+   var withdraw=document.querySelector('#withdrawal');
+   var tixian = $("#tixian").val();
+   var zhifubao = $("#txtzhifubao").text();
+     var yue = $("#yue").val();
+
+    // if (zhifubao.length == 0){
+    //   $("#showmsg").text('请完善个人支付宝资料');
+    //   $("#wanshan").show();
+    //   return false;
+    // }
+   // if (tixian.trim().length == 0) {
+   //   $("#showmsg").text("请输入最小为1的整数");
+   //   withdraw.style.background="#ff0000";
+   //   forward.style.borderColor="#ff0000";
+   //   return false;
+   // }
+   if(!/(^[1-9]\d*$)/.test(forward.value)){
+     $("#showmsg").text('请输入数字，且提现金额大于0的整数');
+     withdraw.style.background="#ff0000";
+     forward.style.borderColor="#ff0000";
+     forward.value='';
+     return false;
+   }
+    if (tixian=="") {
+      $("#showmsg").text("不能为空！");
+      withdraw.style.background="#ff0000";
+      forward.style.borderColor="#ff0000";
+      return false;
+    }
+    if (Number(tixian) > Number(yue)) {
+      $("#showmsg").text("提现金额大于当前余额");
+      withdraw.style.background="#ff0000";
+      forward.style.borderColor="#ff0000";
+      return false;
+    }
+    
+    else {
+    
+      var d = dialog({
+        title: '提示',
+        content: '是否确认提现',
+        okValue: '确 定',
+        ok: function() {
+          var that = this;
+          $("#showmsg").text("");
+          withdraw.style.background="#4bbac5";
+          forward.style.borderColor="#4bbac5";
+          forward.value='';
+
+        },
+        cancelValue: '取消',
+        cancel: function() {
+          withdraw.style.background="#ff0000";
+          forward.style.borderColor="#ff0000";
+          this.close();
+          return false;
+        }
+      });
+      d.show();
+
+    }
+  }
+ 
+</script>
+</body>
+</html>

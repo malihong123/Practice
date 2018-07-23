@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>无标题文档</title>
+  <script>
+    function dec2bin(th){
+      dec = th.value;
+      bin = "";
+      while (dec > 0) {
+        if (dec%2 != 0) { bin = "1" + bin; }
+        else { bin = "0" + bin; }
+        dec = parseInt(dec/2);
+      }
+      document.getElementById('show').innerHTML = bin;
+    }
+  </script>
+</head>
+<body style=" text-align:center; margin-top:30px;">
+<input name="" type="text" onkeyup="dec2bin(this)" value="" size="20" maxlength="20" />
+<div>转换成二进制后的结果是：</div><div id="show"></div>
+</body>
+</html>

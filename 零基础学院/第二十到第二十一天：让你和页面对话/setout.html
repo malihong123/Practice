@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="fade-obj" style="width:300px;height:300px;background:#000;text-align: center;"></div>
+<button id="fade-btn">淡出</button>
+<script>
+// 点击按钮时，开始改变 fade-obj 的透明度，开始一个淡出（逐渐消失）动画，直到透明度为0
+// 在动画过程中，按钮的状态变为不可点击
+// 在动画结束后，按钮状态恢复，且文字变成“淡入”
+// 在 按钮显示 淡入 的状态时，点击按钮，开始一个“淡入”（逐渐出现）的动画，和上面类似按钮不可点，直到透明度完全不透明
+// 淡入动画结束后，按钮文字变为“淡出”
+// 暂时不要使用 CSS animation （以后我们再学习）
+var fadeObj=document.querySelector('#fade-obj');
+var fadeBtn=document.querySelector('#fade-btn');
+var num=10;fTure=true;
+fadeBtn.onclick=function () {
+  fadeIn();
+};
+function fadeIn() {
+  var inSet=setInterval(function () {
+    fadeBtn.disabled=true;
+    if(fTure){
+      num--;
+    }
+    else {
+      num++;
+    }
+    fadeObj.style.opacity=num/10;
+    if(num<=0||num>=10){
+      clearInterval(inSet);
+      fadeBtn.disabled=false;
+    if(num){
+      fadeBtn.innerHTML=(fTure=true)?"淡出":"淡入";
+  }else {
+      fadeBtn.innerHTML=(fTure=false)?"淡出":"淡入";
+  } }
+  },30);
+ 
+}
+
+
+
+
+
+
+// var btnEle = document.querySelector('#fade-btn');
+// var objEle = document.querySelector('#fade-obj');
+// var   num = 10,fName=true;
+// btnEle.onclick=function () {
+//   fadeInOut();
+// };
+// function fadeInOut() {
+// var insetIn=setTimeout(function () {
+// btnEle.disabled=true;
+// if(fName){num--;}
+// else {num++}
+// objEle.style.opacity=num/10;
+// if(num<=0||num>=10){
+//   clearInterval(insetIn);
+//   btnEle.disabled=false;
+//   if(num){
+//     btnEle.innerHTML=(fName=true)?"淡出":"淡入";
+//   }else {
+//     btnEle.innerHTML=(fName=false)?"淡出":"淡入";
+//   }
+// }
+// },30)
+// }
+</script>
+</body>
+</html>

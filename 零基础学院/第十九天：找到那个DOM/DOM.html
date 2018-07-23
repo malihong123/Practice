@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>找到那个DOM</title>
+  <style>
+    *{box-sizing: border-box;}
+    div:after{content: "";overflow: hidden;height: 0;display: block;clear: both;}
+    #wrapper{width: 1024px;margin: 0 auto;overflow: hidden;}
+    .section{width: 45%;padding: 0 2%;}
+    .section h3{background: #3e999f;color: #fff;height: 40px;
+      line-height: 40px;
+      padding-left: 20px;}
+    #news-top{float: left;}
+    #news-normal{float: right;}
+    .section ul{overflow: hidden;    padding-left: 30px;margin: 0;}
+    .section li{list-style: decimal	;}
+    .section li a{float: right;margin-right: 10px;}
+    p{text-align: center;}.active{color: #ff0000;}
+    .nli{width: 100%;font-size: 16px;background: #13ad87;padding:10px;overflow: hidden;color: #fff;}
+    .nli span{float:left;color: #fff;margin-left: 10px;display: inline-block;}
+    button{border: 1px solid #ddd;background: #13ad87;color: #fff;padding: 5px 10px;outline: none;}
+  </style>
+</head>
+<body>
+<div id="wrapper">
+  <div id="news-top" class="section" >
+    <h3>Some title</h3>
+    <div class="content">
+      <ul>
+        <li><span>spanCont</span><a href="">Some Link1</a></li>
+        <li><span>JS</span><a class="active" href="">Some Link2</a></li>
+        <li><span>spanCont</span><a href="">Some Link3</a></li>
+        <li><span>JS</span><a href="">Some Link4</a></li>
+      </ul>
+    </div>
+    <img src="">
+    <p class="">Some Text</p>
+  </div>
+  <div id="news-normal" class="section">
+    <h3>Some title</h3>
+    <div class="content">
+      <ul>
+        <li><span>HTML</span><a href="">Some Link1</a></li>
+        <li><span>HTML</span><a href="">Some Link2</a></li>
+        <li><span>JS</span><a class="active" href="#">Some Link3</a></li>
+        <li><span>CSS</span><a href="">Some Link4</a></li>
+      </ul>
+    </div>
+    <img src="">
+    <p class="">Some Text</p>
+  </div>
+  
+  
+<div class="nli"><span style="float: left;">页面共有多少li标签:</span><span id="nText"></span></div>
+  <button onclick="findAllHtmlSpanInOneSection('news-normal')">返回内容为HTML</button>
+  <button onclick="findListItem('news-top', 'spanCont')">span内容为spanCont的LI标签</button>
+  <button onclick=" getActiveLinkContent('news-top')">class为active的链接中包含的文字内容</button>
+  <p>打开控制台进行查看</p>
+</div>
+<script>
+
+  function getAllListItem() {
+   // 返回页面中所有li标签
+    var nLi=document.getElementsByTagName("li");
+    var length=nLi.length;
+  var nText=document.getElementById("nText");
+   nText.innerText=length;
+  console.log(nLi);
+  }
+  getAllListItem();
+  function findAllHtmlSpanInOneSection(sectionId) {
+    // 返回某个section下所有span中内容为HTML的span标签
+    var secTion=document.getElementById(sectionId);
+    var span=secTion.getElementsByTagName('span');
+    for (var i=0;i<span.length;i++){
+      if (span[i].innerHTML='HTML'){
+        console.log(span[i]);
+      }
+    }
+  }
+  function findListItem(sectionId, spanCont) {
+    // 返回某个section下，所有所包含span内容为spanCont的LI标签
+    var secTion=document.getElementById(sectionId);
+    var nList=secTion.getElementsByTagName('li');
+
+    for(var i=0;i<nList.length;i++){
+    if(nList[i].childNodes[0].innerHTML==spanCont){
+      console.log(nList[i]);
+    }
+    }
+  }
+
+  function getActiveLinkContent(sectionId) {
+    // 返回某个section下，class为active的链接中包含的文字内容
+    var secTion=document.getElementById(sectionId);
+    var aList=secTion.getElementsByTagName('a');
+    for (var i=0;i<aList.length;i++){
+      if(aList[i].className=='active'){
+      console.log(aList[i].innerHTML);
+      }
+    }
+  }
+  // 在这个练习中仅允许使用以下 DOM 方法或属性，不得使用高级选择器
+  // getElementById()
+  // getElementsByTagName()
+  // childNodes
+  // parentNode
+</script>
+</body>
+</html>

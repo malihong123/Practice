@@ -1,0 +1,12 @@
+*{margin: 0;  padding:0;}
+.main{  width: 648px;margin:30px auto;border:1px solid #d5d5d5; padding: 10px; }
+.main h1{padding: 15px 0;font-size: 30px;}
+.two{overflow: hidden;}
+div:after{content: "";clear:both;height: 0;display: block;visibility: hidden;}
+.two h2{font-size: 26px;padding: 10px 0;}
+.two ul{overflow: hidden;}
+.two ul li{float: left;margin-right: 30px; list-style: none;padding: 10px 0;font-weight: bold;font-size: 18px;}
+.twice{margin: 10px 0;}
+.twice h2{font-size: 26px;padding: 10px 0;}
+.twice dt{font-weight: bold;margin: 10px 0;}
+.twice dd{font-weight: normal;}

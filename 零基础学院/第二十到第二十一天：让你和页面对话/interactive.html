@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>第二十到第二十一天：让你和页面对话</title>
+  <script src="jquery-1.8.3.min.js" type="text/javascript" rel="script"></script>
+</head>
+<body>
+<input id="name" type="text">
+<button id="submit-btn">Submit</button>
+<script>
+//   在HTML中增加上面的代码，然后通过JavaScript编写如下功能：
+//   当点击按钮 submit-btn 时，在console中输出 name 中的内容
+//   在输入过程中，如果按回车键，则同样执行上一条的需求
+//   在输入过程中，如果按 ESC 键，则把输入框中的内容清空
+// var suBtn=document.getElementById('submit-btn');
+// var textName=document.getElementById('name');
+// suBtn.onclick=function clearEsc() {
+//   console.log(textName.value);};
+// $('#name').keypress(function (e) {
+//   var code=event.keyCode;
+//   switch (code){
+//     case 13:
+//       console.log(textName.value);
+//       break;
+//     case 27:
+//       textName.value="";
+//       break;
+//   }
+// })
+var suBtn=document.querySelector('#submit-btn');
+var textName=document.querySelector('#name');
+suBtn.onclick=function(){
+  console.log(textName.value);
+};
+$('#name').keypress(function (e) {
+  var code=e.keyCode;
+  switch (code){
+    case 13:
+      console.log(textName.value);
+      break;
+      case 27:
+      textName.value="";
+      break;
+  }
+});
+
+
+</script>
+</body>
+</html>

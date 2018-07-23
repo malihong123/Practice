@@ -1,0 +1,14 @@
+*{margin: 0;  padding:0;}
+.main{width: 995px;margin:35px auto;padding: 10px; }
+.main h1{padding: 15px 0;font-size: 26px;text-align: left;text-indent: 1em;background: #666666;
+color: #ffffff;}
+.two{overflow: hidden;height: 150px;border-bottom: 1px solid #cccccc;}
+div:after{content: "";clear:both;height: 0;display: block;visibility: hidden;}
+.two h2,.twice h2{font-size: 18px;float: left;width: 200px;line-height: 149px;text-align: center;
+background: #cccccc;color: #333;border-bottom:1px solid #ffffff;}
+.two ul{overflow: hidden;margin-left: 10px;display: inline-block;}
+.two ul li{float: left;margin-right: 30px; list-style: none;padding: 10px 0;  font-size: 16px;line-height: 150px;}
+.twice{overflow: hidden;height: 150px;border-bottom: 1px solid #cccccc;}
+.twice dl{float: left; margin: 25px 20px;width: 60%;}
+.twice dt{font-weight: bold;float: left;}
+.twice dd{font-weight: normal;}

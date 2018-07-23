@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>十转二，二转十</title>
+</head>
+<body>
+<input id="dec-number" type="text" placeholder="输入一个十进制非负整数">
+<button id="trans-btn" onclick="dec2bin()">十进制转化为二进制</button>
+<button id="trans-btn1" onclick="dec2bin1()">二进制转化为十进制</button>
+<p id="result">运算结果</p>
+<script>
+var dec=document.getElementById("dec-number");
+var result=document.getElementById("result");
+  function dec2bin(decNumber) {
+    // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+    var de=dec.value;
+    var bin="";
+    if(de){//判断是否为空
+    if(!isNaN(de)){//判断是否为数字
+      // if(reg.test(de)){//判断是否为正数
+       while (de>0){
+        if(de%2 !=0){bin="1"+bin;}
+        else {bin="0"+bin;}
+        de=parseInt(de/2);
+      }
+       result.innerHTML='运算结果为：'+bin;
+
+    
+    }
+    else {
+      alert("请输入正数！");
+    }
+  }
+  else {
+      alert("请输入内容！");
+    }}
+function dec2bin1(decNumber) {
+  // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+  var de=dec.value;
+  var bin="";
+  if(de){//判断是否为空
+    if(!isNaN(de)){//判断是否为数字
+      // if(reg.test(de)){//判断是否为正数
+      if(de>0){
+       var su=parseInt(de,2); result.innerHTML='运算结果为：'+su;
+      }
+    }
+    else {
+      alert("请输入正数！");
+    }
+  }
+  else {
+    alert("请输入内容！");
+  }}
+
+  // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+  // Some coding
+
+</script>
+</body>
+</html>

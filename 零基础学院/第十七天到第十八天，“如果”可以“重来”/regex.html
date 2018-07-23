@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>正则表达</title>
+  <script src="regex.js" rel="script" type="text/javascript"></script>
+  <style>
+    *{box-sizing: border-box;margin: 0;padding: 0;}
+    form{width: 400px;margin: 20px auto;text-align: center;padding: 15px;}
+    dl{overflow: hidden;width: 100%;margin: 10px 0;height: 40px;}
+    dl dt{float: left;width: 120px;font-size: 16px;line-height: 40px;}
+    dl dd{float: left;}
+    dl dd input{padding: 10px;width: 160px;border: 1px solid  #e4e4e4;outline: none;}
+  </style>
+</head>
+<body>
+<form action="three.html" method="post"  onsubmit="return fun1()">
+<h2>学生信息管理</h2>
+  <dl style="margin-top: 20px;">
+    <dt>学生编号：</dt>
+    <dd><input type="text" id="sno" maxlength="8"><span>(8位数字)</span></dd>
+  </dl>
+  <dl>
+    <dt>学生姓名：</dt>
+    <dd><input type="text" id="userName"><span>(中文)</span></dd>
+  </dl>
+  <dl>
+    <dt>邮箱地址：</dt>
+    <dd><input type="text" id="email"></dd>
+  </dl>
+  <dl>
+    <dt>电话号码：</dt>
+    <dd><input type="text" id="tel"></dd>
+  </dl>
+  <input type="submit" value="使用submit按钮提交表单">
+</form>
+
+</body>
+</html>

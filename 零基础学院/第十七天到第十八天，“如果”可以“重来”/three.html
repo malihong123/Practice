@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3的游戏 和 九九乘法表</title>
+</head>
+<body>
+
+<script>
+    for(var i=1;i<=100;i++){
+      var a=i%10;
+      if(a==0){
+        if(i%10==3||Math.floor(i/10) == 3||i%3==0){
+          console.log('PA');
+          document.write('PA、') ;
+         // continue;
+        }else {
+          // console.log(i);
+          document.write(i+'、')
+        }
+        document.write('<br/>');
+      }
+      else {
+        if(i%10==3||Math.floor(i/10) == 3||i%3==0){
+          console.log('PA');
+          document.write('PA、');
+          // continue;跳过该数
+        }else {
+          console.log(i);
+          document.write(i+'、');
+        }
+      }
+    }
+ 
+ for(var a=0;a<10;a++){
+   for(var b=0;b<=a;b++){
+     var sum=a*b;
+     document.write(a+'&nbsp;'+'*'+'&nbsp;'+b+'='+sum +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+     console.log(a+'*'+b+'='+sum);
+   }
+   var sum=a*b;
+   document.write('<br/>');
+ }
+</script>
+</body>
+</html>

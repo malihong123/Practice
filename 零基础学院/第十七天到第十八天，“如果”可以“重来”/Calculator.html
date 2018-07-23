@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算器</title>
+  <style>
+    input,button{outline: none;}
+    input:focus,button:focus{ outline: none;}
+    .main{width: 370px;margin: 50px auto;overflow: hidden;text-align: center;}
+    .content{margin-top: 15px;}
+    .content button{margin-right: 15px;
+      padding: 5px 15px;
+      border: 1px solid #f77979;
+      background: linear-gradient(#f19b9b,#fff);
+    }
+    p{line-height: 35px;}
+    #first-number,#second-number{    width: 160px;
+      border: 1px solid #f19b9b;
+      padding: 10px;}
+    #result{
+      border: 1px solid #f4b3b3;
+      display:  inline-block;
+      overflow:  hidden;
+      width:  auto;
+      height: 30px;padding: 5px 25px;
+    }
+  </style>
+</head>
+<body>
+<div class="main">
+  <h3 style="text-align: center;">简易计算器</h3>
+<input id="first-number" type="text" placeholder="第一个数字">
+<input id="second-number" type="text"  placeholder="第二个数字"><br>
+<div class="content">
+<button id="add-btn" onclick="add_Btn()">加</button>
+<button id="minus-btn" onclick="minus_Btn()">减</button>
+  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp  &nbsp
+<button id="times-btn" onclick="times_Btn()">乘</button>
+<button id="divide-btn" onclick="divide_Btn()">除</button></div>
+<p><span style="float: left;margin-right: 10px;">运算结果:</span><span  id="result"></span></p>
+</div>
+<script>
+  var first_number=document.getElementById("first-number");
+  var second_number=document.getElementById("second-number");
+  var result=document.getElementById("result");
+  var add_btn=document.getElementById("add-btn");
+  var minus_btn=document.getElementById("minus-btn");
+  var times_btn=document.getElementById("times-btn");
+  var divide_btn=document.getElementById("divide-btn");
+  var sum;
+ 
+      function add_Btn(n, m) {
+        var fir=first_number.value;
+        var sec=second_number.value;
+        if(fir&&sec) {
+          if (!isNaN(fir) && !isNaN(sec)) {
+        sum = Number(fir) + Number(sec);
+        result.innerHTML = fir + '+' + sec + '=' + sum;}
+        else {alert("no number")}
+        }
+        else {alert("不能为空")}
+      }
+
+      function minus_Btn(n, m) {
+        var fir=first_number.value;
+        var sec=second_number.value;
+        if(fir&&sec) {
+          if (!isNaN(fir) && !isNaN(sec)) {
+            sum = fir - sec;
+            var num=sum.toFixed(2);
+            result.innerHTML = fir + '-' + sec + '=' + num;}
+          else {alert("no number")}
+        }
+        else {alert("不能为空")}
+      }
+
+      function times_Btn(n, m) {
+        var fir=first_number.value;
+        var sec=second_number.value;
+        if(fir&&sec) {
+          if (!isNaN(fir) && !isNaN(sec)) {
+            sum = fir * sec;
+            result.innerHTML = fir + '*' + sec + '=' + sum;}
+          else {alert("no number")}
+        }
+        else {alert("不能为空")}
+      }
+
+      function divide_Btn(n, m) {
+        var fir=first_number.value;
+        var sec=second_number.value;
+        if(fir&&sec) {
+          if (!isNaN(fir) && !isNaN(sec)) {
+            if (sec != 0) {
+              sum = fir/sec;
+              var num=sum.toFixed(2)
+              result.innerHTML = fir + '  ' + '/' + sec + '  ' + '=' + num;
+            }
+            else {
+              alert("除数不能为0");
+              console.log("除数不能为0")
+            }}
+          else {alert("no number")}
+        }
+        else {alert("不能为空")}
+      }
+</script>
+
+</body>
+</html>
