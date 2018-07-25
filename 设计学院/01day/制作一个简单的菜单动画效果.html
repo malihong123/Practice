@@ -5,21 +5,39 @@
   <title>制作一个简单的菜单动画效果</title>
   <style type="text/css">
     .main{width: 400px;padding: 20px;margin: 20px auto;text-align: center;}
-    .btnH{font-size: 24px;color: #333;width: 150px;height: 50px;line-height: 50px;
-    text-align: center;margin: 0 auto;}
-    .btnH i{border-bottom: 2px solid #1c93ec;margin-top: 10px;width: 0;transition: width 2s;}
+    h2{font-size: 24px;width: 150px;height: 50px;line-height: 50px;
+    text-align: center;margin: 0 auto;transition: all 0.4s linear;}
+    .h1{color: #333;}
+    .h2{color: #1c93ec;}
+    .main i{margin-top: 10px;display: block;border-bottom: 3px solid #1c93ec;transition: all 0.4s linear;
+    width: 100%;}
+    .ti{transform: scale(0)}
     .btn{padding:10px 25px;border: 1px solid #ddd;box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-      background: #fff;border-radius: 5px;margin-top: 20px;outline: none;transition: all 0.6s;}
-    .btnH:hover .btnH i{width: 150px;}
+      background: #fff;border-radius: 5px;margin-top:40px;outline: none;transition: all 0.6s;}
+     .i{transform: scale(1)}
   </style>
 </head>
 <body>
 <div class="main">
-<h2 class="btnH">前端学院 <i></i></h2>
+<h2 >前端学院 <i class="ti"></i></h2>
 <button class="btn">切换样式</button>
 </div>
 <script type="text/javascript">
-
+var btn=document.querySelector('button');
+var btnH=document.querySelector('h2');
+var btnI=document.querySelector('i');
+var flg=true;
+btn.addEventListener('click',function () {
+if(flg){
+  btnH.className='h2';
+  btnI.className='i';
+  flg=false;
+}else {
+  btnH.className='h1';
+  btnI.className='ti';
+  flg=true;
+}
+})
 </script>
 </body>
 </html>
