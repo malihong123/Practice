@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>3D空间的卡片翻转动效果</title>
+<style>
+.main{width: 300px;perspective:600px; position: relative;height: 400px;float: left;}
+.main img{position: absolute;top: 10px;left: 10px;backface-visibility: hidden;transition: all 1s;}
+.main .img2{transform: rotateY(180deg);}
+.main:hover .img2{
+  transform: rotateY(0deg);
+  }
+.main:hover .img1{
+  transform: rotateY(-180deg) ;
+}
+  .main1{
+    width: 80%;perspective: 600px;overflow: hidden;position: relative;height: 400px;float: left;
+  }
+  .main1 img{position: absolute;top: 20px;left: 45%;backface-visibility: hidden;transition: all 0.8s;}
+.main1 .img4{transform:rotateX(-180deg) scale(0.6);}
+.main1:hover .img4{transform:rotateX(0deg) scale(1);}
+.main1:hover .img3{transform:rotateX(180deg) scale(0.6);}
+</style>
+</head>
+<body>
+<div class="main">
+  <img src="正面.jpg" alt="正面" class="img1">
+  <img src="反面.jpg" alt="反面" class="img2">
+</div>
+<div class="main1">
+  <img src="正面.jpg" alt="正面" class="img3">
+  <img src="反面.jpg" alt="反面" class="img4">
+</div>
+</body>
+</html>
